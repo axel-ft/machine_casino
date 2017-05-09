@@ -20,7 +20,10 @@ var playable = function() {
     }
 }
 
-var winOrLose = function() {
-    localStorage.points = parseInt(localStorage.points) + 5;
-    divPoints.innerHTML = localStorage.points;
+var win = function() {
+    var turn = randomize();
+    for(var i = 0; i < turn.length; i++) {
+        if (turn[i] !== turn[0]) return false;
+    }
+    return true;    
 }

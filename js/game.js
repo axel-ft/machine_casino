@@ -13,6 +13,9 @@ poignee.addEventListener('click', function(e) {
     if (playable()) {
         localStorage.points--;
         divPoints.innerHTML = localStorage.points;
-        winOrLose();
+        if (win()) {
+            localStorage.points = parseInt(localStorage.points) + 5;
+            divPoints.innerHTML = localStorage.points;
+        }
     }
 }, false);
