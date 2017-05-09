@@ -39,7 +39,7 @@ noscript > div {
     flex-direction: row;
 }
 
-#pseudo input {
+#pseudo input, #points {
     background-color: #f5ebc8;
     border-radius: 5px;
     border:0;
@@ -47,6 +47,16 @@ noscript > div {
     margin: 15px;
     font-size: 25px;
     text-align: center;
+}
+
+#credits {
+    border-radius: 5px;
+    border:0;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    text-align: center;
+    margin-left: 40px;
 }
 
 #slots {
@@ -61,6 +71,10 @@ noscript > div {
     padding: 15px;
     margin: 20px;
     border-radius: 15px
+}
+
+.slot div {
+
 }
 
 .item {
