@@ -13,13 +13,16 @@ bras.addEventListener('click', function(e) {
         this.classList.toggle('bras-active');
 
         setTimeout(toggleRotation, 500);
-
         localStorage.points--;
         divPoints.innerHTML = localStorage.points;
+ 
         if (win()) {
             localStorage.points = parseInt(localStorage.points) + 5;
             divPoints.innerHTML = localStorage.points;
         }
+
+        registerScore();
+
         setTimeout(() => this.classList.toggle('bras-active'), 1000);
         setTimeout(() => this.dataset.inactive = true, 5000);
     }

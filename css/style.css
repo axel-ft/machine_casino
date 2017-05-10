@@ -5,6 +5,7 @@ body {
     height: 100vh;
     overflow: hidden;
     background: url('../confectionary.png') repeat;
+    flex-direction: column;
 }
 
 noscript {
@@ -117,7 +118,7 @@ noscript > div {
 #bras {
     position: absolute;
     width: 110px;
-    height: 60vh;
+    height: 280px;
     top: -10%;
     left:92%;
     transform-style: preserve-3d;

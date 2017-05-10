@@ -13,6 +13,10 @@ if (typeof(Storage) !== "undefined") {
     if (localStorage.getItem("pseudo") !== null && localStorage.getItem("pseudo") !== undefined) {
         document.getElementById('pseudo').getElementsByTagName('input')[0].value = localStorage.pseudo;
     }
+
+    if (localStorage.getItem("highscores") === null) {
+        localStorage.setItem("highscores", "[]");
+    }
 } else {
     // Sorry! No Web Storage support..
     if ((document.cookie.match(/^(?:.*;)?\s*points\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1] == null ) {

@@ -83,3 +83,26 @@ var win = function() {
     console.log("Vous avez gagné 5 points");
     return true;
 }
+
+var registerScore = function() {
+    if (localStorage.getItem("pseudo") !== null && localStorage.getItem("points") !== null && localStorage.getItem("highscores") !== null) {
+        var highscores = JSON.parse(localStorage.highscores);
+        var highlength = highscores.length;
+
+        if (highscores.length === 0) {
+            highscores.push({"pseudo":localStorage.pseudo, "max":localStorage.points, "gameOver": false});
+        } else {
+            if (highscores[highlength - 1]["pseudo"] !== localStorage.pseudo) highscores.push({"pseudo":localStorage.pseudo, "max":localStorage.points, "gameOver": false})
+            if (highscores[highlength - 1]["pseudo"] === localStorage.pseudo && highscores[highlength - 1]["max"] < localStorage.points) highscores[highlength - 1]["max"] = localStorage.points;
+        }
+
+        localStorage.highscores = JSON.stringify(highscores);
+    }
+    displayScore();
+}
+
+var displayScore = function() {
+    if (localStorage.getItem("highscores") !== null) {
+        console.log(JSON.parse(localStorage.highscores));
+    }
+}
