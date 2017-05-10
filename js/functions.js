@@ -1,5 +1,3 @@
-var divPoints = document.getElementById('points');
-
 var randomize = function() {
     var randomArray = new Array();
     for (var i = 0; i < 4; i++) {
@@ -20,10 +18,68 @@ var playable = function() {
     }
 }
 
+var toggleRotation = function() {
+    for (var i = 0; i < slots.length; i++) {
+        var items = slots[i].getElementsByClassName('item');
+        for (var j = 0; j < items.length; j++) {
+            switch(j) {
+                case 0: items[j].className = "item pique";
+                        break;
+                case 1: items[j].className = "item coeur";
+                        break;
+                case 2: items[j].className = "item carreau";
+                        break;
+                case 3: items[j].className = "item trefle";
+                        break;
+                case 4: items[j].className = "item pique";
+                        break;
+            }
+            items[j].classList.toggle('rotation');
+        }
+    }
+}
+
+var toggleOneRotation = function(ind) {
+    var items = slots[ind].getElementsByClassName('item');
+    for (var i = 0; i < items.length; i++) {
+        items[i].classList.toggle('rotation');
+    }
+}
+
+var addClassToOneSlot = function(ind, classToAdd) {
+        var items = slots[ind].getElementsByClassName('item');
+        for (var i = 0; i < items.length; i++) {
+            items[i].classList.toggle(classToAdd);
+        }
+    }
+
+var stopSlots = function(turn) {
+    console.log(turn);
+
+    for (let i = 0; i < turn.length; i++) {
+        setTimeout(() => {
+            toggleOneRotation(i);
+            switch(turn[i]) {
+                case 0: addClassToOneSlot(i, "vpique");
+                        break;
+                case 1: addClassToOneSlot(i, "vcoeur");
+                        break;
+                case 2: addClassToOneSlot(i, "vcarreau");
+                        break;
+                case 3: addClassToOneSlot(i, "vtrefle");
+                        break;
+            }
+        }, 3000);
+    }
+}
+
 var win = function() {
     var turn = randomize();
+    stopSlots(turn);
+
     for(var i = 0; i < turn.length; i++) {
         if (turn[i] !== turn[0]) return false;
     }
-    return true;    
+    console.log("Vous avez gagné 5 points");
+    return true;
 }

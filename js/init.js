@@ -1,3 +1,5 @@
+var divPoints = document.getElementById('points');
+
 // Define initial variables
 if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
@@ -18,3 +20,6 @@ if (typeof(Storage) !== "undefined") {
     }
 }
 
+var pseudo = document.getElementById('pseudo').getElementsByTagName('input')[0];
+var bras = document.getElementById('bras');
+var slots = document.getElementsByClassName('slot');

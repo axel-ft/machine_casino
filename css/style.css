@@ -4,7 +4,7 @@ body {
     font-family: sans-serif;
     height: 100vh;
     overflow: hidden;
-    perspective: 800px;
+    background: url('../confectionary.png') repeat;
 }
 
 noscript {
@@ -73,8 +73,36 @@ noscript > div {
     border-radius: 15px
 }
 
-.slot div {
+.slot:nth-child(2) .item{
+    animation-delay: 1000ms;
+}
 
+.slot:nth-child(3) .item {
+    animation-delay: 500ms;
+}
+
+.slot:last-child .item {
+    animation-delay: 1500ms;
+}
+
+.slot .rotation {
+    animation: rotation 750ms linear infinite;
+}
+
+.slot .vpique {
+    animation: rotation_pique 1s ease forwards;
+}
+
+.slot .vcoeur {
+    animation: rotation_coeur 1s ease forwards;
+}
+
+.slot .vcarreau {
+    animation: rotation_carreau 1s ease forwards;
+}
+
+.slot .vtrefle {
+    animation: rotation_trefle 1s ease forwards;
 }
 
 .item {
@@ -86,22 +114,35 @@ noscript > div {
     transform-style: preserve-3d;
 }
 
+#bras {
+    position: absolute;
+    width: 110px;
+    height: 60vh;
+    top: -10%;
+    left:92%;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+}
+
+.bras-active {
+    animation: tire_bras 1s linear;
+}
+
 #manche {
     position: absolute;
-    width: 10%;
-    height: 110%;
+    width: 40%;
+    height: 300px;
     background-color: #f5ebc8;
     border-radius: 50px;
-    bottom: 5%;
-    left: 98%; 
+    top:0;
+    left: calc(50% - 25px);
 }
 
 #poignee {
     position: absolute;
-    width: 20%;
-    height: 40%;
+    width: 110px;
+    height: 110px;
     background-color: #dd3142;
     border-radius: 50%;
-    top: -30%;
-    left: 93.5%;
+    background: radial-gradient(circle at 40px 40px, #dd3142, #444);
 }
