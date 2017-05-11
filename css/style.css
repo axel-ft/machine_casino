@@ -269,6 +269,10 @@ h2 {
     line-height: 20px;
 }
 
+#highscores tbody {
+    padding: 5px;
+}
+
 #highscores tr {
     display: flex;
     flex-direction: column;
