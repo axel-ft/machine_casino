@@ -2,6 +2,7 @@ body {
     padding:0;
     margin:0;
     font-family: sans-serif;
+    font-size: 1.5rem;
     height: 100vh;
     overflow: hidden;
     background: url('../confectionary.png') repeat;
@@ -27,12 +28,45 @@ noscript > div {
     justify-content: center;
 }
 
+h1 {
+    margin-bottom: 30px;
+}
+
+#error, #success {
+    margin-top: 20px;
+    animation: fadeOut 1s ease;
+    transition: all 1s ease;
+    opacity:0;
+    width: 80vw;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    text-align: center;
+}
+
+#error {
+    background: #dd3142;
+    color: #ffffff;
+}
+
+#success {
+    background: #1ddb99;
+}
+
+.fade {
+    display: block !important;
+    animation: fadeIn 1s ease forwards !important;
+}
+
 #machine {
     background-color: #28abe5;
+    margin-top: 20px;
     padding: 20px;
-    border-radius: 30px;
+    border-radius: 25px;
     flex-direction: column;
     position: relative;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.3);
 }
 
 #info {
@@ -46,8 +80,12 @@ noscript > div {
     border:0;
     padding: 5px;
     margin: 15px;
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
+}
+
+#pseudo input {
+    width: 275px;
 }
 
 #credits {
@@ -71,7 +109,7 @@ noscript > div {
     overflow: hidden;
     padding: 15px;
     margin: 20px;
-    border-radius: 15px
+    border-radius: 15px;
 }
 
 .slot:nth-child(2) .item{
@@ -110,9 +148,36 @@ noscript > div {
     font-size: 100px;
     text-align: center;
     line-height: 100px;
-    transition: all 0.5s ease;
+    transition: all 1s linear;
     transform-origin: 30% 30%;
     transform-style: preserve-3d;
+}
+
+.carreau, .coeur {
+    color: #dd3142;
+}
+
+#buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#reinit, #resetHighscores {
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #ffffff;
+    text-align: center;
+}
+
+#reinit {
+    background: #28abe5;
+    margin-right: 20px;
+}
+
+#resetHighscores {
+    background: #dd3142;
 }
 
 #bras {
@@ -123,6 +188,7 @@ noscript > div {
     left:92%;
     transform-style: preserve-3d;
     transform-origin: bottom;
+    cursor: pointer;
 }
 
 .bras-active {
@@ -133,10 +199,11 @@ noscript > div {
     position: absolute;
     width: 40%;
     height: 300px;
-    background-color: #f5ebc8;
+    background-color: #e8b61c;
     border-radius: 50px;
     top:0;
     left: calc(50% - 25px);
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
 }
 
 #poignee {
@@ -145,5 +212,77 @@ noscript > div {
     height: 110px;
     background-color: #dd3142;
     border-radius: 50%;
-    background: radial-gradient(circle at 40px 40px, #dd3142, #444);
+    background: radial-gradient(circle at 40px 40px, #dd3142, #444 140%);
+}
+
+#highscores {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+    background: #1ddb99;
+    padding: 20px;
+    border-radius: 25px;
+    max-width: 95vw;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.3);
+}
+
+#highscores h3 {
+    margin: 0;
+}
+
+#highscores table {
+    background: #f5ebc8;
+    border-radius: 15px;
+    max-width: 90vw;
+    overflow: auto;
+}
+
+#highscores table::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#highscores table::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+#highscores table::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #E8B61C;
+}
+
+#highscores table, #highscores tbody {
+    display: flex;
+    flex-direction: row;
+    line-height: 20px;
+}
+
+#highscores tr {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid black;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+#highscores tr:last-child {
+    border:0;
+    margin-right:0;
+    padding-right:0;
+}
+
+#highscores tr th {
+    text-align: left;
+    min-width: 250px;
+}
+
+#highscores tr th, #highscores tr td {
+    padding: 10px 5px;
 }

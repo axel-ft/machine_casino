@@ -31,6 +31,11 @@
             </div>
         </noscript>
 
+        <h1>Bandit Manchot JS</h1>
+
+        <div id="error"></div>
+        <div id="success"></div>
+
         <div id="machine" class="center">
             <div id="info">
                 <div id="pseudo">
@@ -75,8 +80,36 @@
                 <div id="poignee"></div>
             </div>
         </div>
-        <div id="highscores">
+
+        <div id="buttons">
+            <div id="reinit">Nouvelle partie</div>
+            <div id="resetHighscores">Effacer les scores</div>
+            <div id="load"></div>
+        </div>
+
+        <div id="highscores" class="center">
             <h2>Scores</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            <h3>Pseudo</h3>
+                        </th>
+                        <th>
+                            <h3>Score maximal</h3>
+                        </th>
+                        <th>
+                            <h3>Nombre de tirages</h3>
+                        </th>
+                        <th>
+                            <h3>Tirages gagnants</h3>
+                        </th>
+                        <th>
+                            <h3>Partie terminée</h3>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <script type="text/javascript" src="js/init.js"></script>
         <script type="text/javascript" src="js/functions.js"></script>

@@ -12,6 +12,8 @@ if (typeof(Storage) !== "undefined") {
 
     if (localStorage.getItem("pseudo") !== null && localStorage.getItem("pseudo") !== undefined) {
         document.getElementById('pseudo').getElementsByTagName('input')[0].value = localStorage.pseudo;
+    } else {
+        localStorage.setItem("pseudo", "Anonymous");
     }
 
     if (localStorage.getItem("highscores") === null) {
@@ -27,3 +29,8 @@ if (typeof(Storage) !== "undefined") {
 var pseudo = document.getElementById('pseudo').getElementsByTagName('input')[0];
 var bras = document.getElementById('bras');
 var slots = document.getElementsByClassName('slot');
+var highscoresTable = document.getElementById('highscores').getElementsByTagName('tbody')[0];
+var highscoresRows = highscoresTable.getElementsByTagName('tr');
+var error = document.getElementById('error');
+var success = document.getElementById('success');
+var reinit = document.getElementById('reinit');
